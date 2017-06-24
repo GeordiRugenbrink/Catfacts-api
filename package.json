@@ -1,0 +1,19 @@
+{
+  "name": "catfacts",
+  "version": "1.0.0",
+  "description": "Facts about cats you can use in your own javascript or web projects",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/GeordiRugenbrink/catfacts-js.git"
+  },
+  "author": "Geordi Rugenbrink <G.rugenbrink@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/GeordiRugenbrink/catfacts-js/issues"
+  },
+  "homepage": "https://github.com/GeordiRugenbrink/catfacts-js#readme"
+}
