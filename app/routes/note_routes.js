@@ -1,6 +1,7 @@
 var ObjectID = require('mongodb').ObjectID;
 
 module.exports = function(app, db){
+	//gets a catfact on the id you give to the link
 	app.get('/catfacts/:id', (req, res) => {
     	const id = req.params.id;
     	const details = { '_id': new ObjectID(id) };
@@ -12,7 +13,7 @@ module.exports = function(app, db){
 	      } 
     	});
   	});
-
+		//deletes a catfact on the id you give to it
   	app.delete('/catfacts/:id', (req, res) => {
     	const id = req.params.id;
     	const details = { '_id': new ObjectID(id) };
@@ -24,11 +25,11 @@ module.exports = function(app, db){
 	      } 
     	});
   	});
-
+		//updates a catfact on the id you give to it
   	app.put('/catfacts/:id', (req, res) =>{
   		const id = req.params.id;
   		const details = {	'_id': new ObjectID(id)	};
-  		const note = {	text: req.body.body	};
+  		const note = {	fact: req.body.body	};
   		db.collection('catfacts').update(details, note, (err, result) => {
   			if(err){
   				res.send({'error': 'An error has occurred!'});
@@ -37,9 +38,9 @@ module.exports = function(app, db){
   			}
   		});
   	});
-
+	//creates a new catfact
 	app.post('/catfacts', (req, res) =>{
-		const catfact = {	text: req.body.body	};
+		const catfact = {	fact: req.body.body	};
 		db.collection('catfacts').insert(catfact, (err, result) =>{
 			if(err){
 				res.send({	'error': 'An error has occurred'	});
